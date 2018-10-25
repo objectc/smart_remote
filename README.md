@@ -4,5 +4,9 @@ Use Raspberry Pi, IR transmitter, Amazon Ehco to control home appliance
 
 LIRC is a package that allows you to decode and send infra-red signals of many (but not all) commonly used remote controls.
 
+# IR transmitter
+
 # ![IR transmitter](https://github.com/objectc/smart_remote/blob/master/res/IR_Remote.jpg?raw=true)
+# GPIO
+
 # ![GPIO](https://github.com/objectc/smart_remote/blob/master/res/GPIO.jpg?raw=true)
