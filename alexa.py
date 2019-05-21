@@ -9,16 +9,16 @@ ask = Ask(app, '/')
 logging.getLogger('flask_ask').setLevel(logging.DEBUG)
 
 COMMANDS = {
-            'POWER': 'power', 
-            'COOL': 'cool', 
-            'SPEED_UP': 'speed up', 
-            'SPEED_DOWN': 'speed down', 
-            'TEMP_UP': 'temperature up',
-            'TEMP_DOWN': 'temperature down', 
-            'TIMER': 'timer', 
-            'ROTATE': 'rotate', 
-            'NARROW': 'narrow', 
-            'WIDE': 'wide'
+            'power': 'POWER', 
+            'cool': 'COOL', 
+            'speed up': 'SPEED_UP', 
+            'speed down':'SPEED_DOWN', 
+            'temperature up': 'TEMP_UP',
+            'temperature down': 'TEMP_DOWN', 
+            'timer': 'TIMER', 
+            'rotate': 'ROTATE', 
+            'narrow':'NARROW', 
+            'wide':'WIDE'
             }
 
 @ask.launch
@@ -28,10 +28,10 @@ def launch():
 
 @ask.intent('RemoteIntent', mapping = {'command': 'command'})
 def remote(command, room):
-    if command in COMMANDS.values():
-        command_str = 'irsend send_once Dyson' + command
+    if command in COMMANDS.keys():
+        command_str = 'irsend send_once Dyson' + COMMANDS[command]
         os.system(command_str)
-        return statement('dyson'+command)
+        return statement('dyson '+command)
     else:
         return statement('no command'+command)
 
