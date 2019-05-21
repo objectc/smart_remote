@@ -26,9 +26,9 @@ def launch():
     pass
 
 
-@ask.intent(remote, mapping = {'command': 'command'})
+@ask.intent('RemoteIntent', mapping = {'command': 'command'})
 def remote(command, room):
-    if command in COMMANDS.values:
+    if command in COMMANDS.values():
         command_str = 'irsend send_once Dyson' + command
         os.system(command_str)
         return statement('dyson'+command)
