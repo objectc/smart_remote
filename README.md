@@ -1,6 +1,8 @@
 # smart_remote
 I lost my remote of Dyson AM09. So that I use Raspberry Pi, IR transmitter and Amazon Ehco to build a smart remote instead.
 
+[![Smart Remote](https://img.youtube.com/vi/TKRvqR-jYNs/0.jpg)](https://www.youtube.com/watch?v=TKRvqR-jYNs "Smart Remote")
+
 ## Flow Chart
 ![Flow Chart](https://github.com/objectc/smart_remote/blob/master/res/flowchart.png?raw=true)
 
