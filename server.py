@@ -3,14 +3,11 @@ import os
 from flask import Flask
 from flask import request
 from flask import make_response
-from flask_cors import CORS
 from flask import abort, jsonify
 
 from flask import Flask
-from flask_ask import Ask, request, session, question, statement
 
 app = Flask(__name__)
-ask = Ask(app, '/')
 logging.getLogger('flask_ask').setLevel(logging.DEBUG)
 
 COMMANDS = {
@@ -34,9 +31,10 @@ def getDyson():
         if command in COMMANDS.keys():
             command_str = 'irsend send_once Dyson ' + COMMANDS[command]
             os.system(command_str)
-            resData = {'status': 'success'}
+            resData = {'msg': 'success'}
             response = jsonify(resData)
             return response
+    return jsonify({'msg':'no commands found'})
 
 
 if __name__ == '__main__':
