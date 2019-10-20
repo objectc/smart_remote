@@ -11,16 +11,16 @@ app = Flask(__name__)
 logging.getLogger('flask_ask').setLevel(logging.DEBUG)
 
 COMMANDS = {
-    'power': 'POWER',
-    'cool': 'COOL',
-            'speed up': 'SPEED_UP',
-            'speed down': 'SPEED_DOWN',
-            'temperature up': 'TEMP_UP',
-            'temperature down': 'TEMP_DOWN',
-            'timer': 'TIMER',
-            'rotate': 'ROTATE',
-            'narrow': 'NARROW',
-            'wide': 'WIDE'
+    'POWER': 'POWER',
+    'COOL': 'COOL',
+    'SPEED_UP': 'SPEED_UP',
+    'SPEED_DOWN': 'SPEED_DOWN',
+    'TEMP_UP': 'TEMP_UP',
+    'TEMP_DOWN': 'TEMP_DOWN',
+    'TIMER': 'TIMER',
+    'ROTATE': 'ROTATE',
+    'NARROW': 'NARROW',
+    'WIDE': 'WIDE'
 }
 
 
@@ -35,8 +35,8 @@ def getDyson():
             resData = {'msg': 'success'}
             response = jsonify(resData)
             return response
-    return jsonify({'msg':'no commands found'})
+    return jsonify({'msg': 'no commands found'})
 
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', port = 5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
