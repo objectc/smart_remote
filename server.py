@@ -27,6 +27,7 @@ COMMANDS = {
 @app.route("/dyson", methods=['GET'])
 def getDyson():
     command = request.args.get('command')
+    command = command.lower()
     if command:
         if command in COMMANDS.keys():
             command_str = 'irsend send_once Dyson ' + COMMANDS[command]
